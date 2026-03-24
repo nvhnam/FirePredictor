@@ -1,15 +1,21 @@
+import os
 import streamlit as st
 import folium
 from streamlit_folium import st_folium
 import pandas as pd
 import requests
+import pytz
 from datetime import datetime, date
 
 # Constants
 DEFAULT_MAP_CENTER = [21.5, 103.5]
 DEFAULT_ZOOM = 7
-API_URL = "http://144.91.85.194:3000/api/fires"
-START_DATE = date(2026, 3, 24)
+API_URL = os.getenv("API_URL", "http://144.91.85.194:3000/api/fires")
+START_DATE = date(2026, 3, 25)
+
+# Get current date in Vietnam Timezone (GMT+7)
+VN_TZ = pytz.timezone('Asia/Ho_Chi_Minh')
+vn_today = datetime.now(VN_TZ).date()
 
 # Approximate coordinates for Northwest Vietnam highlight (Tây Bắc)
 NORTHWEST_POLYGON = [
@@ -44,9 +50,9 @@ with st.sidebar:
     
     selected_date = st.date_input(
         "Target Date", 
-        value=START_DATE,
+        value=vn_today if vn_today >= START_DATE else START_DATE,
         min_value=START_DATE,
-        max_value=date.today()
+        max_value=vn_today if vn_today >= START_DATE else START_DATE
     ) 
     
     if st.button("Run Prediction", type="primary", use_container_width=True):
