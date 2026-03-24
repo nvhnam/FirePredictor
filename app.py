@@ -10,7 +10,7 @@ from datetime import datetime, date
 DEFAULT_MAP_CENTER = [21.5, 103.5]
 DEFAULT_ZOOM = 7
 API_URL = "http://144.91.85.194:3000/api/fires"
-START_DATE = date(2026, 3, 24)
+START_DATE = date(2026, 3, 25)
 
 # Get current date in Vietnam Timezone (GMT+7)
 VN_TZ = pytz.timezone('Asia/Ho_Chi_Minh')
