@@ -1,10 +1,6 @@
 # Cảnh báo sớm về các điểm cháy rừng ở Việt Nam
 
-_(Forest Fire Early Warning System in Vietnam)_
-
-**Institution:** University of Information Technology (UIT VNU-HCMC)  
-**Course:** Data Mining and Applications – CS2207.CH203  
-**Supervisor:** Dr. Võ Nguyễn Lê Duy
+_(Wildfire Early Warning System in Vietnam)_
 
 **Team member:**
 
