@@ -19,11 +19,11 @@ vn_today = datetime.now(VN_TZ).date()
 
 # Approximate coordinates for Northwest Vietnam highlight (Tây Bắc)
 NORTHWEST_POLYGON = [
-    [22.85, 102.17], [22.85, 104.63], [22.20, 105.05], [21.13, 105.67], 
-    [20.28, 105.67], [20.65, 104.80], [20.90, 102.17], [22.85, 102.17]
+    [22.85, 102.17], [22.85, 104.63], [22.20, 105.05], [21.13, 105.80], 
+    [20.20, 106.00], [20.45, 104.80], [20.90, 102.17], [22.85, 102.17]
 ]
 
-st.set_page_config(layout="wide", page_title="Vietnam Forest Fire Warning", page_icon="🔥")
+st.set_page_config(layout="wide", page_title="Vietnam Wildfire Warning", page_icon="🔥")
 
 # Initialize session state for persistent results
 if 'fire_data' not in st.session_state:
@@ -63,13 +63,13 @@ with st.sidebar:
     st.divider()
     st.markdown("""
     ### About
-    This system provides early warning for forest fires in the **Northwest region of Vietnam**.
+    This system provides early warning for wildfire in the **Northwest region of Vietnam**.
     
     **Blue Border:** Prediction Area
     """)
 
 # --- Main Content ---
-st.title("🔥 Vietnam Forest Fire Early Warning System")
+st.title("🔥 Vietnam Wildfire Early Warning System")
 
 def create_map(fire_points=None):
     m = folium.Map(
