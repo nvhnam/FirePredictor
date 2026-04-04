@@ -121,7 +121,7 @@ def create_map(fire_points=None):
             grid_id = point.get("grid_id", "N/A")
             
             icon_html = '<div style="font-size: 24px;">🔥</div>'
-            popup_text = f"Grid: {grid_id}<br>Confidence: {conf:.1%}"
+            popup_text = f"Lat: {lat}<br>Long: {lon}"
             
             folium.Marker(
                 location=[lat, lon],
