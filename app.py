@@ -136,14 +136,14 @@ def create_map(fire_points=None):
 if st.session_state.fire_data is not None:
     data = st.session_state.fire_data
     
-    col1, col2, col3 = st.columns(3)
+    col1, col2= st.columns(2)
     with col1:
         st.metric("Total Hotspots", len(data))
     with col2:
-        avg_conf = sum(f['confidence_score'] for f in data) / len(data) if data else 0
-        st.metric("Average Confidence", f"{avg_conf:.1%}")
-    with col3:
         st.metric("Date", st.session_state.last_date.strftime("%Y-%m-%d"))
+        # avg_conf = sum(f['confidence_score'] for f in data) / len(data) if data else 0
+        # st.metric("Average Confidence", f"{avg_conf:.1%}")
+    # with col3:
 
     m = create_map(data)
     # Use returned_objects=[] to prevent lagging during pan/zoom
